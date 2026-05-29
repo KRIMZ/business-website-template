@@ -2,9 +2,9 @@ import React from 'react'
 import styles from '../style'
 import { arrowUp } from '../assets'
 
-const GetStarted = () => {
+const GetStarted = ({ onContactClick }) => {
   return (
-    <div className={`${styles.flexCenter} w-[140px] h-[140px] rounded-full bg-blue-gradient p-[2px] cursor-pointer`}>
+    <button onClick={onContactClick} className={`${styles.flexCenter} w-[140px] h-[140px] rounded-full bg-red-gradient p-[2px] border-none outline-none cursor-pointer`}>
       <div className={`${styles.flexCenter} flex-col bg-primary w-[100%] h-[100%] rounded-full`}>
         <div className={`${styles.flexStart} flex-row`}>
           <p className='font-poppins font-medium text-[18px] leading-[23px] mr-2'>
@@ -20,7 +20,7 @@ const GetStarted = () => {
           <span className='text-gradient'>Started</span>
         </p>
       </div>
-    </div>
+    </button>
   )
 }
 

@@ -18,19 +18,19 @@ import {
 export const navLinks = [
   {
     id: "home",
-    title: "Home",
+    title: "Inicio",
   },
   {
     id: "features",
-    title: "Features",
+    title: "Quienes somos",
   },
   {
     id: "product",
-    title: "Product",
+    title: "Producto",
   },
   {
     id: "clients",
-    title: "Clients",
+    title: "Clientes",
   },
 ];
 
@@ -38,23 +38,23 @@ export const features = [
   {
     id: "feature-1",
     icon: star,
-    title: "Rewards",
+    title: "Soluciones Personalizadas",
     content:
-      "The best credit cards offer some tantalizing combinations of promotions and prizes",
+      "Desarrollamos e integramos tecnología adaptada a las necesidades de tu empresa",
   },
   {
     id: "feature-2",
     icon: shield,
-    title: "100% Secured",
+    title: "Seguridad y Confianza",
     content:
-      "We take proactive steps make sure your information and transactions are secure.",
+      "Protegemos tu informacion con estandares y tecnologia de vanguardia.",
   },
   {
     id: "feature-3",
     icon: send,
-    title: "Balance Transfer",
+    title: "Resultados",
     content:
-      "A balance transfer credit card can save you a lot of money in interest charges.",
+      "Impulsamos tu crecimiento con soluciones eficientes, seguras y adaptadas a tus necesidades.",
   },
 ];
 
@@ -88,82 +88,84 @@ export const feedback = [
 export const stats = [
   {
     id: "stats-1",
-    title: "User Active",
-    value: "3800+",
+    title: "Proyectos Completados",
+    value: "120+",
   },
   {
     id: "stats-2",
-    title: "Trusted by Company",
+    title: "Clientes Satisfechos",
     value: "230+",
   },
   {
     id: "stats-3",
-    title: "Transaction",
+    title: "Transacciones",
     value: "$230M+",
   },
 ];
 
 export const footerLinks = [
   {
-    title: "Useful Links",
+    title: "Links Útiles",
     links: [
       {
-        name: "Content",
-        link: "https://www.hoobank.com/content/",
+        name: "Inicio",
+        action: "anchor",
+        target: "home",
       },
       {
-        name: "How it Works",
-        link: "https://www.hoobank.com/how-it-works/",
+        name: "Quienes somos",
+        action: "anchor",
+        target: "features",
       },
       {
-        name: "Create",
-        link: "https://www.hoobank.com/create/",
+        name: "Producto",
+        action: "anchor",
+        target: "product",
       },
       {
-        name: "Explore",
-        link: "https://www.hoobank.com/explore/",
-      },
-      {
-        name: "Terms & Services",
-        link: "https://www.hoobank.com/terms-and-services/",
+        name: "Terminos y servicios",
+        action: "modal",
+        target: "terms",
       },
     ],
   },
   {
-    title: "Community",
+    title: "Comunidad",
     links: [
       {
-        name: "Help Center",
-        link: "https://www.hoobank.com/help-center/",
+        name: "Ayuda",
+        action: "modal",
+        target: "help",
       },
       {
-        name: "Partners",
-        link: "https://www.hoobank.com/partners/",
+        name: "Comunidad",
+        action: "anchor",
+        target: "clients",
       },
       {
-        name: "Suggestions",
-        link: "https://www.hoobank.com/suggestions/",
+        name: "Sugerencias",
+        action: "modal",
+        target: "suggestions",
       },
       {
-        name: "Blog",
-        link: "https://www.hoobank.com/blog/",
-      },
-      {
-        name: "Newsletters",
-        link: "https://www.hoobank.com/newsletters/",
+        name: "Noticias",
+        action: "page",
+        target: "noticias",
       },
     ],
   },
   {
-    title: "Partner",
+    title: "Socios",
     links: [
       {
-        name: "Our Partner",
-        link: "https://www.hoobank.com/our-partner/",
+        name: "Nuestros socios",
+        action: "modal",
+        target: "partners",
       },
       {
-        name: "Become a Partner",
-        link: "https://www.hoobank.com/become-a-partner/",
+        name: "Conviertete en socio",
+        action: "modal",
+        target: "partnerForm",
       },
     ],
   },

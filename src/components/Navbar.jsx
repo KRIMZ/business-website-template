@@ -7,40 +7,44 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false)
 
   return (
-    <nav className='w-full flex py-6 justify-between items-center navbar'>
-      <img src={logo} alt='hoobank' className='w-[124px] h-[32px]'/>
-      <ul className='list-none sm:flex hidden justify-end items-center flex-1'>
-        {navLinks.map((nav, i) => (
-          <li 
-            key={nav.id}
-            className={`font-poppins font-normal cursor-pointer text-[16px] ${i === navLinks.length - 1 ? 'mr-0' : 'mr-10'} text-white mr-10`}
-          >
-            <a href={`#${nav.id}`}>
-              {nav.title}
-            </a>
-          </li>        
-        ))}
-      </ul>
-      <div className='sm:hidden flex flex-1 justify-end items-center'>
-        <img
-          src={toggle ? close : menu}
-          alt='menu'
-          className='w-[28px] h-[28px] object-contain'
-          onClick={() => setToggle((previous) => !previous)}
-        />
-        <div className={`${toggle ? 'flex' : 'hidden'} p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}>
-          <ul className='list-none flex flex-col justify-end items-center flex-1'>
-            {navLinks.map((nav, i) => (
-              <li 
-                key={nav.id}
-                className={`font-poppins font-normal cursor-pointer text-[16px] ${i === navLinks.length - 1 ? 'mr-0' : 'mb-4'} text-white mr-10`}
-              >
-                <a href={`#${nav.id}`}>
-                  {nav.title}
-                </a>
-              </li>        
-            ))}
-          </ul>
+    <nav className='fixed top-6 left-1/2 transform -translate-x-1/2 z-[1000] floating-navbar'>
+      <div className='w-full flex py-4 px-8 justify-between items-center bg-black/80 backdrop-blur-md border border-white/10 rounded-full shadow-[0px_20px_80px_rgba(204,0,0,0.15)]'>
+        <img src={logo} alt='successys' className='w-[100px] h-[28px] object-contain cursor-pointer' />
+        <ul className='list-none sm:flex hidden justify-center items-center gap-8 flex-1 ml-10'>
+          {navLinks.map((nav) => (
+            <li
+              key={nav.id}
+              className='font-poppins font-normal cursor-pointer text-[14px] text-white hover:text-secondary transition-colors duration-300'
+            >
+              <a href={`#${nav.id}`}>
+                {nav.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div className='sm:hidden flex justify-end items-center'>
+          <img
+            src={toggle ? close : menu}
+            alt='menu'
+            className='w-[24px] h-[24px] object-contain cursor-pointer'
+            onClick={() => setToggle((previous) => !previous)}
+          />
+          {toggle && (
+            <div className='absolute top-16 right-0 bg-black/90 backdrop-blur-md border border-white/10 rounded-xl p-6 w-[200px] shadow-[0px_20px_80px_rgba(204,0,0,0.15)]'>
+              <ul className='list-none flex flex-col gap-4'>
+                {navLinks.map((nav) => (
+                  <li
+                    key={nav.id}
+                    className='font-poppins font-normal cursor-pointer text-[14px] text-white hover:text-secondary transition-colors duration-300'
+                  >
+                    <a href={`#${nav.id}`} onClick={() => setToggle(false)}>
+                      {nav.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </nav>

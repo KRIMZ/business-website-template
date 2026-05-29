@@ -4,7 +4,7 @@ import styles, { layout } from '../style'
 import Button from './Button'
 
 const FeatureCard = ({ icon, title, content, index }) => (
-  <div className={`flex flex-row p-6 rounded-[20px] ${index !== features.length - 1 ? 'mb-6' : 'mb-0'} feature-card`}>
+  <div className={`flex flex-row p-6 rounded-[20px] ${index !== features.length - 1 ? 'mb-6' : 'mb-0'} feature-card transition-all duration-300 bg-transparent hover:bg-black-gradient-2 hover:shadow-[0_20px_50px_rgba(255,255,255,0.08)] cursor-pointer border border-white/10 hover:border-white/20`}>
     <div className={`w-[64px] h-[64px] rounded-full ${styles.flexCenter} bg-dimBlue`}>
       <img
         src={icon}
@@ -23,18 +23,18 @@ const FeatureCard = ({ icon, title, content, index }) => (
   </div>
 )
 
-const Business = () => {
+const Business = ({ onContactClick }) => {
   return (
     <section id='features' className={layout.section}>
       <div className={layout.sectionInfo}>
-        <h2 className={styles.heading2}>You do the business, <br className='sm:block hidden'/>we'll handle the money.</h2>
+        <h2 className={styles.heading2}>Confia en nosotros, <br className='sm:block hidden'/>lo hacemos por TI ;) .</h2>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-          With the right credit card, 
-          you can improve your financial life by building credit,
-          earning rewards and saving money.
-          But with hundreds of credit cards on the market.
+          Transformamos la tecnologia en crecimiento, 
+          desde 2015 apoyando con soluciones TI,
+          eficientes, seguras y adaptadas.
+          Experiencia, compromiso y calidad.
         </p>
-        <Button styles='mt-10'/>
+        <Button onClick={onContactClick} styles='mt-10'>Contactanos!</Button>
       </div>
       <div className={`${layout.sectionImg} flex-col`}>
         {features.map((feature, index) => (

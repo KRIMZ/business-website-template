@@ -7,6 +7,7 @@ import Feedback from './Feedback'
 import Footer from './Footer'
 import Hero from './Hero'
 import Navbar from './Navbar'
+import Contact from './Contact'
 import Stats from './Stats'
 import Testimonials from './Testimonials'
 
@@ -15,6 +16,7 @@ export {
     Business,
     CardDeal,
     Clients,
+    Contact,
     CTA,
     Feedback,
     Footer,
