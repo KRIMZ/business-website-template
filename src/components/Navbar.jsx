@@ -2,24 +2,31 @@ import React, { useState } from 'react'
 import { close, logo, menu } from '../assets'
 import { navLinks } from '../constants'
 
-const Navbar = () => {
-
+const Navbar = ({ activeSection, theme, onToggleTheme }) => {
   const [toggle, setToggle] = useState(false)
 
   return (
-    <nav className='w-full flex py-6 justify-between items-center navbar'>
-      <img src={logo} alt='hoobank' className='w-[124px] h-[32px]'/>
+    <nav className='w-full flex py-6 justify-between items-center navbar z-20 relative'>
+      <div className='flex items-center gap-3'>
+        <img src={logo} alt='successys' className='w-[140px] h-auto object-contain' />
+        <span className='text-theme-accent font-semibold tracking-[0.12em] uppercase text-xs'>Information Technology Solutions</span>
+      </div>
       <ul className='list-none sm:flex hidden justify-end items-center flex-1'>
-        {navLinks.map((nav, i) => (
-          <li 
-            key={nav.id}
-            className={`font-poppins font-normal cursor-pointer text-[16px] ${i === navLinks.length - 1 ? 'mr-0' : 'mr-10'} text-white mr-10`}
-          >
-            <a href={`#${nav.id}`}>
+        {navLinks.map((nav) => (
+          <li key={nav.id} className='mr-10 last:mr-0'>
+            <a
+              href={`#${nav.id}`}
+              className={`font-poppins font-medium text-[15px] ${activeSection === nav.id ? 'text-theme-accent' : 'text-theme-muted'} hover:text-theme-accent transition`}
+            >
               {nav.title}
             </a>
-          </li>        
+          </li>
         ))}
+        <li>
+          <button onClick={onToggleTheme} className='rounded-full border border-[#9B1022] bg-transparent px-5 py-3 text-sm font-semibold text-[#9B1022] transition hover:bg-[#9B1022]/10'>
+            {theme === 'dark' ? 'Claro' : 'Oscuro'}
+          </button>
+        </li>
       </ul>
       <div className='sm:hidden flex flex-1 justify-end items-center'>
         <img
@@ -28,17 +35,18 @@ const Navbar = () => {
           className='w-[28px] h-[28px] object-contain'
           onClick={() => setToggle((previous) => !previous)}
         />
-        <div className={`${toggle ? 'flex' : 'hidden'} p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}>
-          <ul className='list-none flex flex-col justify-end items-center flex-1'>
-            {navLinks.map((nav, i) => (
-              <li 
-                key={nav.id}
-                className={`font-poppins font-normal cursor-pointer text-[16px] ${i === navLinks.length - 1 ? 'mr-0' : 'mb-4'} text-white mr-10`}
-              >
-                <a href={`#${nav.id}`}>
+        <div className={`${toggle ? 'flex' : 'hidden'} p-6 theme-card absolute top-20 right-0 mx-4 my-2 min-w-[180px] rounded-xl sidebar shadow-2xl`}>
+          <ul className='list-none flex flex-col justify-end items-start gap-4'>
+            {navLinks.map((nav) => (
+              <li key={nav.id} className='w-full'>
+                <a
+                  href={`#${nav.id}`}
+                  className={`block w-full font-poppins font-medium text-[16px] ${activeSection === nav.id ? 'text-theme-accent' : 'text-theme-muted'} hover:text-theme-accent transition`}
+                  onClick={() => setToggle(false)}
+                >
                   {nav.title}
                 </a>
-              </li>        
+              </li>
             ))}
           </ul>
         </div>

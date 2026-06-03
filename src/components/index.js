@@ -1,5 +1,4 @@
 import Billing from './Billing'
-import Business from './Business'
 import CardDeal from './CardDeal'
 import Clients from './Clients'
 import CTA from './CTA'
@@ -9,10 +8,17 @@ import Hero from './Hero'
 import Navbar from './Navbar'
 import Stats from './Stats'
 import Testimonials from './Testimonials'
+import About from './About'
+import Services from './Services'
+import Products from './Products'
+import Providers from './Providers'
+import Team from './Team'
+import Contact from './Contact'
+import ModalContact from './ModalContact'
+import QuickLinks from './QuickLinks'
 
 export {
     Billing,
-    Business,
     CardDeal,
     Clients,
     CTA,
@@ -20,6 +26,14 @@ export {
     Footer,
     Hero,
     Navbar,
+    QuickLinks,
     Stats,
-    Testimonials
+    Testimonials,
+    About,
+    Services,
+    Products,
+    Providers,
+    Team,
+    Contact,
+    ModalContact,
 }

@@ -1,60 +1,116 @@
-import { 
-  people01, 
-  people02, 
-  people03, 
-  facebook, 
-  instagram, 
-  linkedin, 
-  twitter, 
-  airbnb, 
-  binance, 
-  coinbase, 
-  dropbox, 
-  send, 
-  shield, 
-  star
-} from "../assets";
+import {
+  people01,
+  people02,
+  people03,
+  facebook,
+  instagram,
+  linkedin,
+  twitter,
+  airbnb,
+  binance,
+  coinbase,
+  dropbox,
+  google,
+  apple,
+} from '../assets'
 
 export const navLinks = [
+  { id: 'home', title: 'Inicio' },
+  { id: 'about', title: 'Nosotros' },
+  { id: 'services', title: 'Servicios' },
+  { id: 'products', title: 'Productos' },
+  { id: 'providers', title: 'Proveedores' },
+  { id: 'team', title: 'Equipo' },
+  { id: 'contact', title: 'Contacto' },
+];
+
+export const services = [
   {
-    id: "home",
-    title: "Home",
+    id: 'service-1',
+    icon: '🖥️',
+    title: 'Desarrollo web corporativo',
+    description: 'Plataformas, portales y sitios web seguros y escalables para operaciones empresariales.',
   },
   {
-    id: "features",
-    title: "Features",
+    id: 'service-2',
+    icon: '🛡️',
+    title: 'Ciberseguridad empresarial',
+    description: 'Protección de datos, auditorías, detección de riesgos y respuesta ante incidentes.',
   },
   {
-    id: "product",
-    title: "Product",
+    id: 'service-3',
+    icon: '💻',
+    title: 'PCs empresariales',
+    description: 'Configuración, suministro y soporte de equipos de alto rendimiento para grandes empresas.',
   },
   {
-    id: "clients",
-    title: "Clients",
+    id: 'service-4',
+    icon: '📊',
+    title: 'SAP y sistemas integrados',
+    description: 'Implementación y mantenimiento de soluciones SAP para gestión financiera y operaciones.',
+  },
+  {
+    id: 'service-5',
+    icon: '🌐',
+    title: 'Redes y conectividad',
+    description: 'Diseño, instalación y administración de redes seguras y de alto desempeño.',
+  },
+  {
+    id: 'service-6',
+    icon: '⚙️',
+    title: 'Automatización y soporte',
+    description: 'Integración de procesos y soporte continuo para mantener tu operación sin interrupciones.',
   },
 ];
 
-export const features = [
+export const products = [
   {
-    id: "feature-1",
-    icon: star,
-    title: "Rewards",
-    content:
-      "The best credit cards offer some tantalizing combinations of promotions and prizes",
+    id: 'product-1',
+    icon: '🖨️',
+    name: 'Estación de trabajo premium',
+    description: 'Equipos de alto rendimiento configurados para diseño, desarrollo y análisis de datos.',
   },
   {
-    id: "feature-2",
-    icon: shield,
-    title: "100% Secured",
-    content:
-      "We take proactive steps make sure your information and transactions are secure.",
+    id: 'product-2',
+    icon: '🖱️',
+    name: 'Paquete de seguridad',
+    description: 'Licencias y hardware para proteger redes y equipos con cifrado avanzado.',
   },
   {
-    id: "feature-3",
-    icon: send,
-    title: "Balance Transfer",
-    content:
-      "A balance transfer credit card can save you a lot of money in interest charges.",
+    id: 'product-3',
+    icon: '📦',
+    name: 'Solución SAP completa',
+    description: 'Distribución de módulos SAP listos para empresa, con integración y soporte técnico.',
+  },
+];
+
+export const providerLogos = [
+  { name: 'Airbnb', src: airbnb },
+  { name: 'Binance', src: binance },
+  { name: 'Coinbase', src: coinbase },
+  { name: 'Dropbox', src: dropbox },
+  { name: 'Google', src: google },
+  { name: 'Apple', src: apple },
+];
+
+export const team = [
+  {
+    name: 'Alejandra Rivera',
+    role: 'CEO & Estrategia TI',
+    summary: 'Lidera proyectos de transformación digital y alianzas tecnológicas.',
+    image: people01,
+  },
+  {
+    name: 'Carlos Mendoza',
+    role: 'Director de Ciberseguridad',
+    summary: 'Especialista en protección de infraestructura y gestión de riesgos.',
+    image: people02,
+  },
+  {
+    name: 'Marcela Gómez',
+    role: 'Arquitecta de Soluciones',
+    summary: 'Diseña redes, SAP y plataformas que escalan sin sacrificar seguridad.',
+    image: people03,
   },
 ];
 
