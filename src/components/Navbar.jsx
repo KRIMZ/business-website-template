@@ -7,9 +7,13 @@ const Navbar = ({ activeSection, theme, onToggleTheme }) => {
 
   return (
     <nav className='w-full flex py-6 justify-between items-center navbar z-20 relative'>
-      <div className='flex items-center gap-3'>
-        <img src={logo} alt='successys' className='w-[140px] h-auto object-contain' />
-        <span className='text-theme-accent font-semibold tracking-[0.12em] uppercase text-xs'>Information Technology Solutions</span>
+      <div className='flex flex-col items-center gap-0'>
+        <span className='font-poppins font-semibold text-[28px] uppercase tracking-[0.18em] text-[#9B1022]'>
+          SUCCESSYS
+        </span>
+        <span className='font-poppins text-[12px] tracking-[0.18em] text-theme-muted'>
+          Information technology solutions
+        </span>
       </div>
       <ul className='list-none sm:flex hidden justify-end items-center flex-1'>
         {navLinks.map((nav) => (
