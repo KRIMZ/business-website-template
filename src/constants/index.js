@@ -1,60 +1,116 @@
-import { 
-  people01, 
-  people02, 
-  people03, 
-  facebook, 
-  instagram, 
-  linkedin, 
-  twitter, 
-  airbnb, 
-  binance, 
-  coinbase, 
-  dropbox, 
-  send, 
-  shield, 
-  star
-} from "../assets";
+import {
+  people01,
+  people02,
+  people03,
+  facebook,
+  instagram,
+  linkedin,
+  twitter,
+  airbnb,
+  binance,
+  coinbase,
+  dropbox,
+  google,
+  apple,
+} from '../assets'
 
 export const navLinks = [
+  { id: 'home', title: 'Inicio' },
+  { id: 'about', title: 'Nosotros' },
+  { id: 'services', title: 'Servicios' },
+  { id: 'products', title: 'Productos' },
+  { id: 'providers', title: 'Proveedores' },
+  { id: 'team', title: 'Equipo' },
+  { id: 'contact', title: 'Contacto' },
+];
+
+export const services = [
   {
-    id: "home",
-    title: "Inicio",
+    id: 'service-1',
+    icon: '🖥️',
+    title: 'Desarrollo web corporativo',
+    description: 'Plataformas, portales y sitios web seguros y escalables para operaciones empresariales.',
   },
   {
-    id: "features",
-    title: "Quienes somos",
+    id: 'service-2',
+    icon: '🛡️',
+    title: 'Ciberseguridad empresarial',
+    description: 'Protección de datos, auditorías, detección de riesgos y respuesta ante incidentes.',
   },
   {
-    id: "product",
-    title: "Producto",
+    id: 'service-3',
+    icon: '💻',
+    title: 'PCs empresariales',
+    description: 'Configuración, suministro y soporte de equipos de alto rendimiento para grandes empresas.',
   },
   {
-    id: "clients",
-    title: "Clientes",
+    id: 'service-4',
+    icon: '📊',
+    title: 'SAP y sistemas integrados',
+    description: 'Implementación y mantenimiento de soluciones SAP para gestión financiera y operaciones.',
+  },
+  {
+    id: 'service-5',
+    icon: '🌐',
+    title: 'Redes y conectividad',
+    description: 'Diseño, instalación y administración de redes seguras y de alto desempeño.',
+  },
+  {
+    id: 'service-6',
+    icon: '⚙️',
+    title: 'Automatización y soporte',
+    description: 'Integración de procesos y soporte continuo para mantener tu operación sin interrupciones.',
   },
 ];
 
-export const features = [
+export const products = [
   {
-    id: "feature-1",
-    icon: star,
-    title: "Soluciones Personalizadas",
-    content:
-      "Desarrollamos e integramos tecnología adaptada a las necesidades de tu empresa",
+    id: 'product-1',
+    icon: '🖨️',
+    name: 'Estación de trabajo premium',
+    description: 'Equipos de alto rendimiento configurados para diseño, desarrollo y análisis de datos.',
   },
   {
-    id: "feature-2",
-    icon: shield,
-    title: "Seguridad y Confianza",
-    content:
-      "Protegemos tu informacion con estandares y tecnologia de vanguardia.",
+    id: 'product-2',
+    icon: '🖱️',
+    name: 'Paquete de seguridad',
+    description: 'Licencias y hardware para proteger redes y equipos con cifrado avanzado.',
   },
   {
-    id: "feature-3",
-    icon: send,
-    title: "Resultados",
-    content:
-      "Impulsamos tu crecimiento con soluciones eficientes, seguras y adaptadas a tus necesidades.",
+    id: 'product-3',
+    icon: '📦',
+    name: 'Solución SAP completa',
+    description: 'Distribución de módulos SAP listos para empresa, con integración y soporte técnico.',
+  },
+];
+
+export const providerLogos = [
+  { name: 'Airbnb', src: airbnb },
+  { name: 'Binance', src: binance },
+  { name: 'Coinbase', src: coinbase },
+  { name: 'Dropbox', src: dropbox },
+  { name: 'Google', src: google },
+  { name: 'Apple', src: apple },
+];
+
+export const team = [
+  {
+    name: 'Alejandra Rivera',
+    role: 'CEO & Estrategia TI',
+    summary: 'Lidera proyectos de transformación digital y alianzas tecnológicas.',
+    image: people01,
+  },
+  {
+    name: 'Carlos Mendoza',
+    role: 'Director de Ciberseguridad',
+    summary: 'Especialista en protección de infraestructura y gestión de riesgos.',
+    image: people02,
+  },
+  {
+    name: 'Marcela Gómez',
+    role: 'Arquitecta de Soluciones',
+    summary: 'Diseña redes, SAP y plataformas que escalan sin sacrificar seguridad.',
+    image: people03,
   },
 ];
 
@@ -88,84 +144,82 @@ export const feedback = [
 export const stats = [
   {
     id: "stats-1",
-    title: "Proyectos Completados",
-    value: "120+",
+    title: "User Active",
+    value: "3800+",
   },
   {
     id: "stats-2",
-    title: "Clientes Satisfechos",
+    title: "Trusted by Company",
     value: "230+",
   },
   {
     id: "stats-3",
-    title: "Transacciones",
+    title: "Transaction",
     value: "$230M+",
   },
 ];
 
 export const footerLinks = [
   {
-    title: "Links Útiles",
+    title: "Useful Links",
     links: [
       {
-        name: "Inicio",
-        action: "anchor",
-        target: "home",
+        name: "Content",
+        link: "https://www.hoobank.com/content/",
       },
       {
-        name: "Quienes somos",
-        action: "anchor",
-        target: "features",
+        name: "How it Works",
+        link: "https://www.hoobank.com/how-it-works/",
       },
       {
-        name: "Producto",
-        action: "anchor",
-        target: "product",
+        name: "Create",
+        link: "https://www.hoobank.com/create/",
       },
       {
-        name: "Terminos y servicios",
-        action: "modal",
-        target: "terms",
+        name: "Explore",
+        link: "https://www.hoobank.com/explore/",
+      },
+      {
+        name: "Terms & Services",
+        link: "https://www.hoobank.com/terms-and-services/",
       },
     ],
   },
   {
-    title: "Comunidad",
+    title: "Community",
     links: [
       {
-        name: "Ayuda",
-        action: "modal",
-        target: "help",
+        name: "Help Center",
+        link: "https://www.hoobank.com/help-center/",
       },
       {
-        name: "Comunidad",
-        action: "anchor",
-        target: "clients",
+        name: "Partners",
+        link: "https://www.hoobank.com/partners/",
       },
       {
-        name: "Sugerencias",
-        action: "modal",
-        target: "suggestions",
+        name: "Suggestions",
+        link: "https://www.hoobank.com/suggestions/",
       },
       {
-        name: "Noticias",
-        action: "page",
-        target: "noticias",
+        name: "Blog",
+        link: "https://www.hoobank.com/blog/",
+      },
+      {
+        name: "Newsletters",
+        link: "https://www.hoobank.com/newsletters/",
       },
     ],
   },
   {
-    title: "Socios",
+    title: "Partner",
     links: [
       {
-        name: "Nuestros socios",
-        action: "modal",
-        target: "partners",
+        name: "Our Partner",
+        link: "https://www.hoobank.com/our-partner/",
       },
       {
-        name: "Conviertete en socio",
-        action: "modal",
-        target: "partnerForm",
+        name: "Become a Partner",
+        link: "https://www.hoobank.com/become-a-partner/",
       },
     ],
   },

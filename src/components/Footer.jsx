@@ -1,33 +1,28 @@
 import React from 'react'
 import styles from '../style'
+import { logo } from '../assets'
 import { footerLinks, socialMedia } from '../constants'
 
-const Footer = ({ onFooterLink }) => {
+const Footer = () => {
   return (
-    <section className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
+    <section className={`${styles.flexCenter} ${styles.paddingY} flex-col theme-surface`}>
       <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
         <div className='flex-1 flex flex-col justify-start mr-10'>
-          <h3 className='font-poppins font-semibold text-[24px] text-white mb-4'>Successys</h3>
-          <p className={`${styles.paragraph} mt-4 max-w-[310px]`}>
-            Information Technology Solutions: La tecnología trabajando para ti.
+          <img src={logo} alt='successys logo' className='w-[240px] h-auto object-contain mb-4' />
+          <p className={`${styles.paragraph} mt-4 max-w-[320px] text-theme-muted`}>
+            Successys ofrece soluciones tecnológicas profesionales para empresas grandes con foco en seguridad y rendimiento.
           </p>
         </div>
-        <div className='flex-[1.5] w-full flex flex-row justify-between flex-wrap md:mt-0 mt-10'>
+        <div className='flex-[1.5] w-full flex flex-row justify-between flex-wrap md:mt-0 mt-10 gap-6'>
           {footerLinks.map((link) => (
             <div key={link.title} className='flex flex-col ss:my-0 my-4 min-w-[150px]'>
-              <h4 className='font-poppins font-medium text-[18px] leading-[27px] text-white'>
+              <h4 className='font-poppins font-semibold text-[18px] leading-[27px] text-theme'>
                 {link.title}
               </h4>
-              <ul className='list-none mt-4'>
-                {link.links.map((item, index) => (
-                  <li key={item.name} className={`${index !== link.links.length - 1 ? 'mb-4' : 'mb-0'}`}>
-                    <button
-                      type='button'
-                      onClick={() => onFooterLink?.(item)}
-                      className='font-poppins font-normal text-[16px] leading-[24px] text-dimWhite hover:text-secondary text-left'
-                    >
-                      {item.name}
-                    </button>
+              <ul className='list-none mt-4 space-y-3'>
+                {link.links.map((item) => (
+                  <li key={item.name} className='font-poppins text-[16px] leading-[24px] text-theme-muted hover:text-[#9B1022] cursor-pointer'>
+                    {item.name}
                   </li>
                 ))}
               </ul>
@@ -35,18 +30,15 @@ const Footer = ({ onFooterLink }) => {
           ))}
         </div>
       </div>
-      <div className='w-full flex justify-between items-center md:flex-row flex-col pt-6 border-t-[1px] border-t-[#3F3E45]'>
-        <p className='font-poppins font-normal text-center text-[18px] leading-[27px] text-white'>
-          2026 Successys. All Rights Reserved.
+      <div className='w-full flex flex-col md:flex-row justify-between items-center gap-4 pt-6 border-t border-[#474E45]'>
+        <p className='font-poppins font-normal text-[16px] leading-[27px] text-theme-muted'>
+          © 2026 Successys. Todos los derechos reservados.
         </p>
-        <div className='flex flex-row md:mt-0 mt-6'>
-          {socialMedia.map((social, index) => (
-            <img
-              src={social.icon}
-              key={social.id}
-              alt={social.id}
-              className={`w-[21px] h-[21px] object-contain cursor-pointer ${index !== socialMedia.length - 1 ? 'mr-6' : 'mr-0'}`}
-            />
+        <div className='flex flex-row items-center gap-5'>
+          {socialMedia.map((social) => (
+            <a key={social.id} href={social.link} target='_blank' rel='noreferrer'>
+              <img src={social.icon} alt={social.id} className='w-[22px] h-[22px] object-contain opacity-80 hover:opacity-100 transition' />
+            </a>
           ))}
         </div>
       </div>

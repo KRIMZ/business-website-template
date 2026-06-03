@@ -15,11 +15,11 @@ const Billing = () => {
         <div className='absolute z-[0] -left-1/2 bottom-0 w-[50%] h-[50%] rounded-full pink__gradient'/>
       </div>
       <div className={layout.sectionInfo}>
-        <h2 className={styles.heading2}> Successys:  <br className='sm:block hidden'/> la tecnología trabajando para ti.</h2>
+        <h2 className={styles.heading2}> Se nuestro socio, <br className='sm:block hidden'/> Deja que nos ocupemos de tu suministro!. </h2>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-          Nuestros éxitos han sido fruto de nuestra experiencia
-          y de un constante fortalecimiento académico  que nos 
-          ayudan a enfrentar los desafíos que impone el mercado.
+          Tenemos una gran variedad de productos y servicios para satisfacer tus necesidades
+          , Confia en nosotros y descubre la diferencia,
+          Deja que seamos tus proveedores.
         </p>
         <div className='flex flex-row flex-wrap sm:mt-10 mt-6'>
           <img
