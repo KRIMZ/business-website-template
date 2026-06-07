@@ -12,7 +12,6 @@ Tracking del subtítulo: tracking-[0.18em]
 
 
 PÁGINA PRINCIPAL (index.html)
-
 La página tiene estos componentes:
 
 - BarraNavegacion 
@@ -54,9 +53,6 @@ La página tiene estos componentes:
 
 
 PÁGINA DE VENTAS (ventas.html)
-
-Catálogo de productos profesionales tipo SoloTodo.cl.
-
 Componentes:
 
 - NavegacionVentas
@@ -115,34 +111,19 @@ Componentes:
 - PiePagina --> Mismo footer que página principal
 - Botón flotante de Contacto (📞) --> Abre formulario
 
-PRODUCTOS DISPONIBLES (20 total)
+BACKEND
 
-Hardware (4):
-- Monitor UltraWide 34" | LG | $580 | 9/10 | Recomendado
-- PC Gamer RGB | ASUS | $1200 | 8/10 | Recomendado
-- Laptop ThinkPad T14 | Lenovo | $950 | 7/10
-- Servidor HP ProLiant | HP | $3500 | 6/10 | Recomendado
-
-Software (4):
-- Microsoft Office 365 | Microsoft | $69 | 10/10 | Recomendado
-- Adobe Creative Cloud | Adobe | $79 | 9/10
-- JetBrains IntelliJ IDEA | JetBrains | $199 | 8/10
-- AutoCAD 2024 | Autodesk | $580 | 7/10
-
-Licencias (4):
-- Windows 11 Pro | Microsoft | $199 | 10/10 | Recomendado
-- Kaspersky Total Security | Kaspersky | $89 | 8/10
-- SAP Business One | SAP | $2000 | 7/10 | Recomendado
-- VMware vSphere | VMware | $1500 | 6/10
-
-Periféricos (4):
-- Teclado Mecánico RGB | Corsair | $149 | 9/10 | Recomendado
-- Mouse Logitech MX Master | Logitech | $99 | 8/10
-- Webcam Logitech 4K | Logitech | $199 | 7/10
-- Hub USB-C 7 en 1 | Anker | $79 | 6/10
-
-Tecnología (4):
-- Dispositivo Firewall Cisco | Cisco | $1800 | 8/10 | Recomendado
-- Switch PoE 48 Puertos | Netgear | $950 | 7/10
-- Router Wi-Fi 6E | ASUS | $350 | 9/10
-- NAS 8 Bahías Synology | Synology | $1200 | 8/10
+## FALTA 
+ - CREAR RUTA DE CONTACTO
+ - CREAR RUTA DE COTIZACION
+ - MANTENER FUNCIONANDO
+ - DEJAR SERVER.JS CON LAS RUTAS IMPORTADAS Y LIMPIO
+ - AGREGAR UNA RUTA PRINCIPAL
+ - CONECTAR LA PAGINA DE VENTAS DEL FRONT
+ - VERIFICAR ERRORES DE LA PAGINA PRINCIPAL
+ - CREAR CONTROLLERS PARA PRODUCTOS, CONTACTO, ETC
+ - CREAR ARCHIVOS DE ALMACENAMIENTO
+ - CREAR RUTAS PARA ENDPOINTS
+ - ACTUALIZAR COMPONENTES DE VENTAS
+ - ASEGURAR FILTRADO Y ORDEN DE PRODUCTOS
+ 

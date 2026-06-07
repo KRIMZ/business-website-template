@@ -1,22 +1,51 @@
-import React, { useState, useMemo } from 'react'
-import { productosVenta, categoriasVenta } from '../constants'
+import React, { useState, useEffect, useMemo } from 'react'
 import TarjetaProducto from './TarjetaProducto'
 
 const CatalogoProductos = ({ onQuoteProduct }) => {
+  const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
   const [activeCategory, setActiveCategory] = useState('home')
-  const [priceRange, setPriceRange] = useState([0, 5000])
+  const [priceRange, setPriceRange] = useState([0, 3000000])
   const [selectedBrands, setSelectedBrands] = useState([])
-  const [sortBy, setSortBy] = useState('popularidad')
+  const [sortBy, setSortBy] = useState('popular')
+
+  // Cargar productos desde la API
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        setLoading(true)
+        const response = await fetch('http://localhost:5000/api/products')
+        if (!response.ok) throw new Error('Error al cargar productos')
+        const data = await response.json()
+        setProducts(data)
+        setError(null)
+      } catch (err) {
+        setError(err.message)
+        console.error('Error fetching products:', err)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchProducts()
+  }, [])
+
+  // Obtener categorías únicas
+  const categories = useMemo(() => {
+    const cats = new Set(products.map((p) => p.category))
+    return Array.from(cats).sort()
+  }, [products])
 
   // Obtener marcas únicas
   const allBrands = useMemo(() => {
-    const brands = new Set(productosVenta.map((p) => p.brand))
+    const brands = new Set(products.map((p) => p.brand))
     return Array.from(brands).sort()
-  }, [])
+  }, [products])
 
   // Filtrar y ordenar productos
   const filteredProducts = useMemo(() => {
-    let filtered = productosVenta
+    let filtered = products
 
     // Filtrar por categoría
     if (activeCategory !== 'home') {
@@ -34,19 +63,19 @@ const CatalogoProductos = ({ onQuoteProduct }) => {
     // Ordenar
     const sorted = [...filtered]
     switch (sortBy) {
-      case 'precio-asc':
+      case 'price_asc':
         sorted.sort((a, b) => a.price - b.price)
         break
-      case 'precio-desc':
+      case 'price_desc':
         sorted.sort((a, b) => b.price - a.price)
         break
-      case 'popularidad':
+      case 'popular':
         sorted.sort((a, b) => b.popularity - a.popularity)
         break
-      case 'recomendados':
+      case 'recommended':
         sorted.sort((a, b) => {
-          if (a.isRecommended === b.isRecommended) return 0
-          return a.isRecommended ? -1 : 1
+          if (a.recommended === b.recommended) return 0
+          return a.recommended ? -1 : 1
         })
         break
       default:
@@ -54,12 +83,16 @@ const CatalogoProductos = ({ onQuoteProduct }) => {
     }
 
     return sorted
-  }, [activeCategory, priceRange, selectedBrands, sortBy])
+  }, [activeCategory, priceRange, selectedBrands, sortBy, products])
 
   const toggleBrand = (brand) => {
     setSelectedBrands((prev) =>
       prev.includes(brand) ? prev.filter((b) => b !== brand) : [...prev, brand]
     )
+  }
+
+  const handleCategorySelect = (category) => {
+    setActiveCategory(category)
   }
 
   return (
@@ -84,7 +117,7 @@ const CatalogoProductos = ({ onQuoteProduct }) => {
                 <h3 className='font-semibold text-theme mb-4'>Categorías</h3>
                 <div className='space-y-3'>
                   <button
-                    onClick={() => setActiveCategory('home')}
+                    onClick={() => handleCategorySelect('home')}
                     className={`block w-full text-left text-sm px-3 py-2 rounded-lg transition ${
                       activeCategory === 'home'
                         ? 'bg-[#9B1022] text-white'
@@ -93,17 +126,17 @@ const CatalogoProductos = ({ onQuoteProduct }) => {
                   >
                     Todos los productos
                   </button>
-                  {categoriasVenta.map((cat) => (
+                  {categories.map((cat) => (
                     <button
-                      key={cat.id}
-                      onClick={() => setActiveCategory(cat.id)}
-                      className={`block w-full text-left text-sm px-3 py-2 rounded-lg transition ${
-                        activeCategory === cat.id
+                      key={cat}
+                      onClick={() => handleCategorySelect(cat)}
+                      className={`block w-full text-left text-sm px-3 py-2 rounded-lg transition capitalize ${
+                        activeCategory === cat
                           ? 'bg-[#9B1022] text-white'
                           : 'text-theme-muted hover:bg-[#9B1022]/10'
                       }`}
                     >
-                      {cat.icon} {cat.label}
+                      {cat}
                     </button>
                   ))}
                 </div>
@@ -116,7 +149,8 @@ const CatalogoProductos = ({ onQuoteProduct }) => {
                   <input
                     type='range'
                     min='0'
-                    max='5000'
+                    max='9000000'
+                    step='100000'
                     value={priceRange[0]}
                     onChange={(e) => setPriceRange([Number(e.target.value), priceRange[1]])}
                     className='w-full'
@@ -124,13 +158,14 @@ const CatalogoProductos = ({ onQuoteProduct }) => {
                   <input
                     type='range'
                     min='0'
-                    max='5000'
+                    max='9000000'
+                    step='100000'
                     value={priceRange[1]}
                     onChange={(e) => setPriceRange([priceRange[0], Number(e.target.value)])}
                     className='w-full'
                   />
                   <p className='text-sm text-theme-muted'>
-                    ${priceRange[0]} - ${priceRange[1]}
+                    ${priceRange[0].toLocaleString()} - ${priceRange[1].toLocaleString()}
                   </p>
                 </div>
               </div>
@@ -157,9 +192,9 @@ const CatalogoProductos = ({ onQuoteProduct }) => {
               <button
                 onClick={() => {
                   setActiveCategory('home')
-                  setPriceRange([0, 5000])
+                  setPriceRange([0, 3000000])
                   setSelectedBrands([])
-                  setSortBy('popularidad')
+                  setSortBy('popular')
                 }}
                 className='w-full bg-[#9B1022]/20 text-[#9B1022] px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#9B1022]/30 transition'
               >
@@ -173,23 +208,34 @@ const CatalogoProductos = ({ onQuoteProduct }) => {
             {/* Opciones de Orden */}
             <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8'>
               <p className='text-sm text-theme-muted'>
-                {filteredProducts.length} producto{filteredProducts.length !== 1 ? 's' : ''} encontrado
-                {filteredProducts.length !== 1 ? 's' : ''}
+                {loading ? 'Cargando...' : `${filteredProducts.length} producto${filteredProducts.length !== 1 ? 's' : ''} encontrado${filteredProducts.length !== 1 ? 's' : ''}`}
               </p>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
                 className='px-4 py-2 rounded-lg bg-theme-surface text-theme border border-[#474E45] text-sm font-medium cursor-pointer outline-none focus:border-[#9B1022]'
               >
-                <option value='popularidad'>Más Populares</option>
-                <option value='recomendados'>Recomendados</option>
-                <option value='precio-asc'>Menor Precio</option>
-                <option value='precio-desc'>Mayor Precio</option>
+                <option value='popular'>Más Populares</option>
+                <option value='recommended'>Recomendados</option>
+                <option value='price_asc'>Menor Precio</option>
+                <option value='price_desc'>Mayor Precio</option>
               </select>
             </div>
 
-            {/* Grid de Productos */}
-            {filteredProducts.length > 0 ? (
+            {/* Mensaje de Error */}
+            {error && (
+              <div className='bg-red-500/20 border border-red-500 text-red-200 px-4 py-3 rounded-lg mb-8'>
+                <p>Error: {error}</p>
+                <p className='text-sm mt-2'>Asegúrate de que el backend está ejecutándose en http://localhost:5000</p>
+              </div>
+            )}
+
+            {/* Estado de Carga */}
+            {loading ? (
+              <div className='text-center py-12'>
+                <p className='text-theme-muted'>Cargando productos...</p>
+              </div>
+            ) : filteredProducts.length > 0 ? (
               <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
                 {filteredProducts.map((product) => (
                   <TarjetaProducto
@@ -200,9 +246,8 @@ const CatalogoProductos = ({ onQuoteProduct }) => {
                 ))}
               </div>
             ) : (
-              <div className='py-16 text-center'>
-                <p className='text-2xl text-theme-muted mb-2'>No se encontraron productos</p>
-                <p className='text-theme-muted'>Intenta con otros filtros</p>
+              <div className='text-center py-12'>
+                <p className='text-theme-muted'>No se encontraron productos que coincidan con los filtros</p>
               </div>
             )}
           </div>
