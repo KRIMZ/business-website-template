@@ -1,7 +1,7 @@
 import styles from '../style'
 import { team } from '../constants'
 
-const Team = () => (
+const Equipo = () => (
   <section id='team' className={`${styles.paddingY} text-theme`}>
     <div className='max-w-7xl mx-auto px-6'>
       <div className='flex flex-col gap-4 mb-12'>
@@ -24,4 +24,4 @@ const Team = () => (
   </section>
 )
 
-export default Team
+export default Equipo

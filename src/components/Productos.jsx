@@ -1,7 +1,7 @@
 import styles from '../style'
 import { products } from '../constants'
 
-const Products = () => (
+const Productos = () => (
   <section id='products' className={`${styles.paddingY} text-theme`}>
     <div className='max-w-7xl mx-auto px-6'>
       <div className='flex flex-col gap-4 mb-12'>
@@ -20,6 +20,7 @@ const Products = () => (
       <div className='mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center'>
         <a
           href='/ventas.html'
+          onClick={(e) => { e.preventDefault(); window.location.href = '/ventas.html' }}
           className='inline-flex items-center justify-center rounded-full bg-[#9B1022] px-8 py-4 text-sm font-semibold text-white transition hover:bg-[#7a1018]'
         >
           Ver productos
@@ -30,4 +31,4 @@ const Products = () => (
   </section>
 )
 
-export default Products
+export default Productos

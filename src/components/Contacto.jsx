@@ -1,6 +1,6 @@
 import styles from '../style'
 
-const Contact = ({ onOpenModal }) => (
+const Contacto = ({ onOpenModal }) => (
   <section id='contact' className={`${styles.paddingY} text-theme`}>
     <div className='max-w-7xl mx-auto px-6'>
       <div className='flex flex-col gap-4 mb-10'>
@@ -17,15 +17,15 @@ const Contact = ({ onOpenModal }) => (
           <div className='space-y-6'>
             <div>
               <p className='text-sm uppercase tracking-[0.3em] text-[#9B1022] font-semibold mb-2'>Email</p>
-              <p className='text-theme-muted'>hola@successys.com</p>
+              <p className='text-theme-muted'>soporte@successys.cl</p>
             </div>
             <div>
               <p className='text-sm uppercase tracking-[0.3em] text-[#9B1022] font-semibold mb-2'>Teléfono</p>
-              <p className='text-theme-muted'>+52 55 1234 5678</p>
+              <p className='text-theme-muted'>+56 2 2345 6789</p>
             </div>
             <div>
               <p className='text-sm uppercase tracking-[0.3em] text-[#9B1022] font-semibold mb-2'>Ubicación</p>
-              <p className='text-theme-muted'>Ciudad de México, México</p>
+              <p className='text-theme-muted'>Santiago, Chile</p>
             </div>
           </div>
         </div>
@@ -34,4 +34,4 @@ const Contact = ({ onOpenModal }) => (
   </section>
 )
 
-export default Contact
+export default Contacto

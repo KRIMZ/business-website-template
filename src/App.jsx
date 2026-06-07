@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import {
-  About,
-  Contact,
-  Footer,
-  Hero,
-  ModalContact,
-  Navbar,
-  Products,
-  Providers,
-  Services,
-  Team,
+  QuienesSomos,
+  Contacto,
+  PiePagina,
+  Portada,
+  FormularioContacto,
+  BarraNavegacion,
+  Productos,
+  Proveedores,
+  Servicios,
+  Equipo,
 } from './components'
 import styles from './style'
 
@@ -50,7 +50,7 @@ const App = () => {
       <div className='fixed inset-x-0 top-0 z-40 theme-card backdrop-blur-xl border-theme-border'>
         <div className={`${styles.paddingX} ${styles.flexCenter}`}>
           <div className={`${styles.boxWidth}`}>
-            <Navbar
+            <BarraNavegacion
               activeSection={activeSection}
               theme={theme}
               onToggleTheme={toggleTheme}
@@ -60,14 +60,14 @@ const App = () => {
       </div>
       <main className={`${styles.paddingX} relative pt-28`}>
         <div className={`${styles.boxWidth}`}>
-          <Hero onContactClick={() => setModalOpen(true)} />
-          <About />
-          <Services />
-          <Products />
-          <Providers />
-          <Team />
-          <Contact onOpenModal={() => setModalOpen(true)} />
-          <Footer />
+          <Portada onContactClick={() => setModalOpen(true)} />
+          <QuienesSomos />
+          <Servicios />
+          <Productos />
+          <Proveedores />
+          <Equipo />
+          <Contacto onOpenModal={() => setModalOpen(true)} />
+          <PiePagina />
         </div>
       </main>
       <button
@@ -78,7 +78,7 @@ const App = () => {
         <span className='text-lg'>📞</span>
         Contacto
       </button>
-      <ModalContact open={modalOpen} onClose={() => setModalOpen(false)} />
+      <FormularioContacto open={modalOpen} onClose={() => setModalOpen(false)} />
     </div>
   )
 }

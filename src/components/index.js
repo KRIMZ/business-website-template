@@ -1,23 +1,29 @@
-import Footer from './Footer'
-import Hero from './Hero'
-import Navbar from './Navbar'
-import About from './About'
-import Services from './Services'
-import Products from './Products'
-import Providers from './Providers'
-import Team from './Team'
-import Contact from './Contact'
-import ModalContact from './ModalContact'
+import PiePagina from './PiePagina'
+import Portada from './Portada'
+import BarraNavegacion from './BarraNavegacion'
+import QuienesSomos from './QuienesSomos'
+import Servicios from './Servicios'
+import Productos from './Productos'
+import Proveedores from './Proveedores'
+import Equipo from './Equipo'
+import Contacto from './Contacto'
+import FormularioContacto from './FormularioContacto'
+import NavegacionVentas from './NavegacionVentas'
+import CatalogoProductos from './CatalogoProductos'
+import TarjetaProducto from './TarjetaProducto'
 
 export {
-    Footer,
-    Hero,
-    Navbar,
-    About,
-    Services,
-    Products,
-    Providers,
-    Team,
-    Contact,
-    ModalContact,
+    PiePagina,
+    Portada,
+    BarraNavegacion,
+    QuienesSomos,
+    Servicios,
+    Productos,
+    Proveedores,
+    Equipo,
+    Contacto,
+    FormularioContacto,
+    NavegacionVentas,
+    CatalogoProductos,
+    TarjetaProducto,
 }

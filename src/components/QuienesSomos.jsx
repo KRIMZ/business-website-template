@@ -1,6 +1,6 @@
 import styles from '../style'
 
-const About = () => (
+const QuienesSomos = () => (
   <section id='about' className={`${styles.paddingY} text-theme`}>
     <div className='max-w-7xl mx-auto px-6'>
       <div className='max-w-3xl'>
@@ -22,4 +22,4 @@ const About = () => (
   </section>
 )
 
-export default About
+export default QuienesSomos

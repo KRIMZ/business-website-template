@@ -1,15 +1,21 @@
 import React from 'react'
 import styles from '../style'
-import { logo } from '../assets'
 import { footerLinks, socialMedia } from '../constants'
 
-const Footer = () => {
+const PiePagina = () => {
   return (
     <footer className={`${styles.paddingY} relative w-full`}>
       <div className={`${styles.flexStart} md:flex-row flex-col mb-10 w-full gap-8 max-w-7xl mx-auto px-6`}>
         {/* Branding */}
         <div className='flex-1 flex flex-col justify-start'>
-          <img src={logo} alt='successys logo' className='w-[200px] h-auto object-contain mb-4' />
+          <div className='flex flex-col items-center gap-0 mb-4'>
+            <span className='font-poppins font-semibold text-[28px] uppercase tracking-[0.18em] text-[#9B1022]'>
+              SUCCESSYS
+            </span>
+            <span className='font-poppins text-[12px] tracking-[0.18em] text-theme-muted'>
+              Information technology solutions
+            </span>
+          </div>
           <p className='text-sm text-theme-muted leading-7 max-w-[300px]'>
             Transformamos tecnología en soluciones empresariales confiables y escalables.
           </p>
@@ -71,4 +77,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default PiePagina

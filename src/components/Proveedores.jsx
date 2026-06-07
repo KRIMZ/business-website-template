@@ -1,7 +1,7 @@
 import styles from '../style'
 import { providerLogos } from '../constants'
 
-const Providers = () => (
+const Proveedores = () => (
   <section id='providers' className={`${styles.paddingY} text-theme`}>
     <div className='max-w-7xl mx-auto px-6'>
       <div className='flex flex-col gap-4 mb-12'>
@@ -19,4 +19,4 @@ const Providers = () => (
   </section>
 )
 
-export default Providers
+export default Proveedores
