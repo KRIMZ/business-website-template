@@ -200,7 +200,7 @@ export const socialMedia = [
 ];
 
 export const ventasNavLinks = [
-  { id: 'home', title: 'Inicio' },
+  { id: 'homesells', title: 'Inicio' },
   { id: 'hardware', title: 'Hardware' },
   { id: 'software', title: 'Software' },
   { id: 'licenses', title: 'Licencias' },

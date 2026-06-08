@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { close, menu } from '../assets'
 import { ventasNavLinks } from '../constants'
+import { navLinks } from '../constants'
 
 const NavegacionVentas = ({ activeCategory, onCategoryChange, theme, onToggleTheme }) => {
   const [toggle, setToggle] = useState(false)
@@ -45,9 +46,14 @@ const categoryLabels = {
 return (
     <nav className='w-full flex py-6 justify-between items-center navbar z-20 relative'>
       <div className='flex flex-col items-center justify-center gap-0 min-w-[240px]'>
-        <span className='font-poppins font-semibold text-[28px] uppercase tracking-[0.18em] text-[#9B1022] leading-tight'>
+        <button 
+          onClick={() => {
+            window.location.href = '/'
+          }}
+          className='font-poppins font-semibold text-[28px] uppercase tracking-[0.18em] text-[#9B1022] leading-tight'>
           SUCCESSYS
-        </span>
+
+        </button>
         <span className='font-poppins text-[12px] tracking-[0.18em] text-theme-muted leading-tight'>
           Information technology solutions
         </span>
@@ -57,9 +63,21 @@ return (
           <li key={nav.id} className='mr-10 last:mr-0'>
             <button
               onClick={() => {
-                if (nav.id !== 'home') {
-                  setOpenMenu(true)
+                if (nav.id === 'homesells') {
+                  const section = document.getElementById('homesells')
+
+                  if (section) {
+                    section.scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'start',
+                    })
+                  }
+
+                  setOpenMenu(false)
+                  return
                 }
+
+                setOpenMenu(true)
                 onCategoryChange(nav.id)
               }}
               className={`font-poppins font-medium text-[15px] ${

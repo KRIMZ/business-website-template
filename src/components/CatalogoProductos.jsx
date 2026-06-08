@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import TarjetaProducto from './TarjetaProducto'
 
-const CatalogoProductos = ({ onQuoteProduct }) => {
+const CatalogoProductos = ({ onAddToCart }) => {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [activeCategory, setActiveCategory] = useState('home')
-  const [priceRange, setPriceRange] = useState([0, 3000000])
+  const [priceRange, setPriceRange] = useState([0, 9000000])
   const [selectedBrands, setSelectedBrands] = useState([])
   const [sortBy, setSortBy] = useState('popular')
 
@@ -241,7 +241,7 @@ const CatalogoProductos = ({ onQuoteProduct }) => {
                   <TarjetaProducto
                     key={product.id}
                     product={product}
-                    onQuote={onQuoteProduct}
+                    onAddToCart={onAddToCart}
                   />
                 ))}
               </div>

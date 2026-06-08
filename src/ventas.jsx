@@ -10,12 +10,14 @@ import {
   FormularioCompra,
   PortadaVentas,
 } from './components'
+import { CarritoProvider, useCarrito } from './Context/CarritoContext'
 import styles from './style'
 
 const VentasPage = () => {
   const [activeCategory, setActiveCategory] = useState('home')
   const [modalOpen, setModalOpen] = useState(false)
   const [theme, setTheme] = useState('dark')
+  const { addToCart } = useCarrito()
   const toggleTheme = () => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))
 
 
@@ -41,7 +43,7 @@ const VentasPage = () => {
         <main className={`${styles.paddingX} relative pt-28`}>
           <div className={`${styles.boxWidth}`}>
             <PortadaVentas />
-            <CatalogoProductos />
+            <CatalogoProductos onAddToCart={addToCart} />
           </div>
         </main>
 
@@ -71,4 +73,9 @@ const VentasPage = () => {
   )
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(<VentasPage />)
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <CarritoProvider>
+
+    <VentasPage />
+  </CarritoProvider>
+)

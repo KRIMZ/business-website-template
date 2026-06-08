@@ -1,9 +1,10 @@
 import styles from '../style'
 import { robot } from '../assets'
+import CatalogoProductos from './CatalogoProductos'
 
 const PortadaVentas = ({ onContactClick }) => {
   return (
-    <section id='home' className={`${styles.paddingY} flex flex-col lg:flex-row items-center gap-12 lg:gap-16 theme-bg`}>
+    <section id='homesells' className={`${styles.paddingY} flex flex-col lg:flex-row items-center gap-12 lg:gap-16 theme-bg`}>
       <div className='max-w-4xl'>
         <div className='inline-flex items-center gap-2 rounded-full bg-[#9B1022]/10 px-4 py-2 mb-6'>
           <span className='text-sm font-semibold text-[#9B1022]'>
