@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "sebastian Droguett Flores",
+    "email": "sebastian.droguett16@gmail.com",
+    "phone": "958595383",
+    "message": "adadada",
+    "createdAt": "2026-06-07T13:30:42.587Z"
+  },
+  {
+    "id": 2,
+    "name": "constanza",
+    "email": "kdakljdkaljdal@gmail.com",
+    "phone": "12313213131",
+    "message": "fhnjsdjkahdnajknda\n",
+    "createdAt": "2026-06-07T13:31:07.991Z"
+  },
+  {
+    "id": 3,
+    "name": "sebastian Droguett Flores",
+    "email": "sebastian.droguett16@gmail.com",
+    "phone": "+56 - 9 - 5859 - 5383",
+    "message": "adadadadad",
+    "createdAt": "2026-06-07T13:31:31.645Z"
+  },
+  {
+    "id": 4,
+    "name": "sebastian Droguett Flores",
+    "email": "sebastian.droguett16@gmail.com",
+    "phone": "958595383",
+    "message": "adadada",
+    "createdAt": "2026-06-07T13:31:50.335Z"
+  },
+  {
+    "id": 5,
+    "name": "sebastian Droguett Flores",
+    "email": "sebastian.droguett16@gmail.com",
+    "phone": "958595383",
+    "message": "adaa",
+    "createdAt": "2026-06-07T13:39:05.318Z"
+  }
+]

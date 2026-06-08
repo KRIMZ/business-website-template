@@ -85,7 +85,7 @@ const TarjetaProducto = ({ product, onQuote }) => {
           <p className='text-2xl font-bold text-[#9B1022]'>${product.price.toLocaleString()}</p>
         </div>
         <button
-          onClick={() => onQuote(product)}
+          onClick={() => onQuote(product)} 
           disabled={product.stock === 0}
           className={`flex-1 rounded-full px-4 py-3 text-sm font-semibold transition active:scale-95 ${
             product.stock === 0

@@ -6,6 +6,9 @@ import {
   CatalogoProductos,
   PiePagina,
   FormularioContacto,
+  Carrito,
+  FormularioCompra,
+  PortadaVentas,
 } from './components'
 import styles from './style'
 
@@ -13,14 +16,8 @@ const VentasPage = () => {
   const [activeCategory, setActiveCategory] = useState('home')
   const [modalOpen, setModalOpen] = useState(false)
   const [theme, setTheme] = useState('dark')
-  const [selectedProduct, setSelectedProduct] = useState(null)
-
   const toggleTheme = () => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))
 
-  const handleQuoteProduct = (product) => {
-    setSelectedProduct(product)
-    setModalOpen(true)
-  }
 
   return (
     <React.StrictMode>
@@ -38,23 +35,25 @@ const VentasPage = () => {
             </div>
           </div>
         </div>
+        
 
         {/* Contenido Principal */}
         <main className={`${styles.paddingX} relative pt-28`}>
           <div className={`${styles.boxWidth}`}>
-            <CatalogoProductos onQuoteProduct={handleQuoteProduct} />
+            <PortadaVentas />
+            <CatalogoProductos />
           </div>
         </main>
 
         {/* Footer */}
         <PiePagina />
 
+        {/* Carrito */}
+        <Carrito />
+
         {/* Botón Flotante de Contacto */}
         <button
-          onClick={() => {
-            setSelectedProduct(null)
-            setModalOpen(true)
-          }}
+          onClick={() => { setModalOpen(true) }}
           className='fixed bottom-6 right-6 z-50 inline-flex items-center gap-3 rounded-full bg-[#9B1022] px-5 py-4 text-sm font-semibold text-white shadow-2xl transition hover:bg-[#7a1018]'
           aria-label='Abrir contacto'
         >
@@ -66,7 +65,6 @@ const VentasPage = () => {
         <FormularioContacto
           open={modalOpen}
           onClose={() => setModalOpen(false)}
-          productData={selectedProduct}
         />
       </div>
     </React.StrictMode>

@@ -11,6 +11,9 @@ import FormularioContacto from './FormularioContacto'
 import NavegacionVentas from './NavegacionVentas'
 import CatalogoProductos from './CatalogoProductos'
 import TarjetaProducto from './TarjetaProducto'
+import Carrito from './Carrito'
+import FormularioCompra from './FormularioCompra'
+import PortadaVentas from './PortadaVentas'
 
 export {
     PiePagina,
@@ -26,4 +29,7 @@ export {
     NavegacionVentas,
     CatalogoProductos,
     TarjetaProducto,
+    Carrito,
+    FormularioCompra,
+    PortadaVentas,
 }
