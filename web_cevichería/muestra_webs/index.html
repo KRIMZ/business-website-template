@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- ✏️ EDITAR: título y descripción SEO -->
+  <title>NAKAMA VTG® Studio — Season Drop 2026 · Streetwear & Urban Essentials</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="description" content="Nueva colección Season Drop 2026: polerones heavyweight, pantalones y accesorios de edición limitada. Envíos a todo el país.">
+  <meta name="theme-color" content="#0c0c0b">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c0c0b'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Impact,sans-serif' font-size='40' fill='%23d6ff3d'%3EV%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <!-- ✏️ EDITAR: tipografías (recuerda actualizar --f-* en style.css) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css?v=3">
+  <noscript><style>.preloader{display:none}.reveal,.hero__fade{opacity:1;transform:none}.hero__title .word{transform:none}.hero__img-inner{clip-path:none}.hero__img-inner img{transform:none}</style></noscript>
+</head>
+<body>
+  <a class="skip-link" href="#coleccion">Saltar al catálogo</a>
+
+  <!-- Preloader -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <span class="preloader__brand"><span data-brand>NAKAMA VTG</span></span>
+      <span class="preloader__meta">Season Drop 2026</span>
+      <span class="preloader__bar"></span>
+    </div>
+  </div>
+
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Banner lateral fijo (desktop) con progreso de scroll -->
+  <aside class="side-rail" aria-hidden="true">
+    <span class="side-rail__text">SS/26 — Urban Essentials</span>
+    <span class="side-rail__bar"><span></span></span>
+    <span class="side-rail__text">Hecho en Chile</span>
+  </aside>
+
+  <!-- ===================== 1. TICKER + 2. NAVBAR ===================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="ticker" role="marquee" aria-label="Anuncios de la tienda">
+      <div class="ticker__track">
+        <ul class="ticker__group">
+          <!-- ✏️ EDITAR: mensajes del ticker (se repiten automáticamente) -->
+          <li>Nueva Colección</li>
+          <li>Envíos a todo el país</li>
+          <li>Descuento Lanzamiento</li>
+          <li>Drop Exclusivo</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="nav">
+      <div class="nav__inner container">
+        <div class="nav__left">
+          <button class="nav__burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+            <span></span><span></span>
+          </button>
+          <nav class="nav__links" aria-label="Navegación principal">
+            <a class="nav__link" href="#coleccion"><span class="roll"><span data-text="Colección">Colección</span></span></a>
+            <a class="nav__link" href="#drops"><span class="roll"><span data-text="Drops">Drops</span></span></a>
+            <a class="nav__link" href="#lookbook"><span class="roll"><span data-text="Lookbook">Lookbook</span></span></a>
+            <a class="nav__link" href="#contacto"><span class="roll"><span data-text="Contacto">Contacto</span></span></a>
+          </nav>
+        </div>
+
+        <!-- ✏️ EDITAR: el nombre de marca se toma de CONFIG.brand en app.js -->
+        <a class="nav__logo" href="#top" aria-label="Ir al inicio"><span data-brand>NAKAMA</span><sup>®</sup></a>
+
+        <div class="nav__actions">
+          <span class="nav__locale">CL · CLP</span>
+          <button class="cart-btn" id="cartOpen" type="button" aria-label="Abrir carrito" aria-controls="cart">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2L5 8Z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg>
+            <span class="cart-btn__label">Carrito</span>
+            <span class="cart-btn__count is-zero" id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menú móvil -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true" inert>
+    <nav class="mobile-menu__nav" aria-label="Menú móvil">
+      <a href="#coleccion" style="--i:0"><small>01</small>Colección</a>
+      <a href="#drops" style="--i:1"><small>02</small>Drops</a>
+      <a href="#lookbook" style="--i:2"><small>03</small>Lookbook</a>
+      <a href="#contacto" style="--i:3"><small>04</small>Contacto</a>
+    </nav>
+    <div class="mobile-menu__foot">
+      <p>Envíos a todo el país · Cambios gratis 30 días</p>
+      <div class="socials">
+        <a class="social" href="#" aria-label="Instagram"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg></a>
+        <a class="social" href="#" aria-label="TikTok"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 2.8 2.3 4.5 5 4.8"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <main id="top">
+    <!-- ===================== 3. HERO ===================== -->
+    <section class="hero" id="hero" aria-labelledby="heroTitle">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <span class="hero__bg-text" aria-hidden="true">SS26</span>
+
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow hero__fade" style="--i:0"><span class="dot"></span>Colección SS/26 — Disponible ahora</p>
+
+          <!-- ✏️ EDITAR: titular principal -->
+          <h1 class="hero__title" id="heroTitle">
+            <span class="line"><span class="word" style="--i:0">Season</span></span>
+            <span class="line line--indent"><span class="word" style="--i:1"><em>Drop</em></span><span class="word hero__note" style="--i:2" aria-hidden="true">Vol. 04<br>Limited run</span></span>
+            <span class="line"><span class="word outline" style="--i:3">2026</span></span>
+          </h1>
+
+          <!-- ✏️ EDITAR: bajada -->
+          <p class="hero__lead hero__fade" style="--i:1">Siluetas oversize, tejidos heavyweight y detalles que se notan. Producción limitada, diseñada para la calle y pensada para durar.</p>
+
+          <div class="hero__ctas hero__fade" style="--i:2">
+            <a href="#coleccion" class="btn btn--primary magnetic">
+              <span class="btn__inner">Explorar Colección <svg class="i btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            </a>
+            <a href="#lookbook" class="btn btn--ghost magnetic"><span class="btn__inner">Ver Lookbook</span></a>
+          </div>
+
+          <ul class="hero__stats hero__fade" style="--i:3">
+            <li><strong data-count="120">120</strong><span>+ Prendas<br>en stock</span></li>
+            <li><strong>48h</strong><span>Despacho<br>express</span></li>
+            <li><strong>4.9</strong><span>★ +2.300<br>reseñas</span></li>
+          </ul>
+        </div>
+
+        <!-- ✏️ EDITAR: imágenes del hero -->
+        <div class="hero__media">
+          <figure class="hero__img hero__img--main" data-parallax="0.06" data-depth="18">
+            <div class="hero__img-inner" style="--i:0">
+              <img src="img/10.png" alt="Colección Nakama VTG" width="1100" height="1400" fetchpriority="high">
+            </div>
+            <figcaption class="hero__caption glass">Look 01 — Sunset Set</figcaption>
+          </figure>
+          <figure class="hero__img hero__img--top" data-parallax="-0.1" data-depth="-26">
+            <div class="hero__img-inner" style="--i:1">
+              <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=700&h=800&q=80" alt="Modelo con chaqueta streetwear frente a un muro urbano" width="700" height="800">
+            </div>
+          </figure>
+          <figure class="hero__img hero__img--bottom" data-parallax="0.16" data-depth="34">
+            <div class="hero__img-inner" style="--i:2">
+              <img src="https://images.unsplash.com/photo-1506634572416-48cdfe530110?auto=format&fit=crop&w=700&h=800&q=80" alt="Modelo con suéter magenta sobre fondo oscuro" width="700" height="800">
+            </div>
+          </figure>
+
+          <div class="hero__badge" data-parallax="-0.2" data-depth="-40">
+            <a href="#coleccion" aria-label="Ver la nueva colección">
+              <svg class="hero__badge-spin" viewBox="0 0 200 200" aria-hidden="true">
+                <defs><path id="badgeCircle" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
+                <text><textPath href="#badgeCircle" textLength="462" lengthAdjust="spacing">New Drop • Season 2026 • Edición Limitada •</textPath></text>
+              </svg>
+              <span class="hero__badge-core"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
+            </a>
+          </div>
+
+          <div class="hero__tag-wrap" data-parallax="0.12" data-depth="24">
+            <div class="hero__tag glass" data-product-ref="nakama-hoodie-cream">
+              <img class="hero__tag-img" src="img/1.png" alt="Hoodie Vintage Washed Crema" width="52" height="64">
+              <div class="hero__tag-info">
+                <span class="hero__tag-kicker">Más vendido</span>
+                <strong data-ref-name>Hoodie Vintage Washed Crema</strong>
+                <span data-ref-price>$38.990</span>
+              </div>
+              <button class="hero__tag-add" type="button" data-quick-add="nakama-hoodie-cream" data-size="M" aria-label="Agregar Hoodie Crema talla M al carrito">
+                <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="hero__scroll" href="#coleccion"><span>Scroll</span><i></i></a>
+    </section>
+
+    <!-- Bandas cruzadas que reaccionan a la velocidad del scroll -->
+    <section class="bands" aria-hidden="true">
+      <div class="band band--a">
+        <div class="band__track" data-marquee="-1">
+          <div class="band__group">
+            <span>Urban Essentials</span>
+            <svg viewBox="0 0 24 24"><path d="M12 0c.6 6.2 5.8 11.4 12 12-6.2.6-11.4 5.8-12 12-.6-6.2-5.8-11.4-12-12C6.2 11.4 11.4 6.2 12 0Z"/></svg>
+            <span><em>Season Drop</em></span>
+            <svg viewBox="0 0 24 24"><path d="M12 0c.6 6.2 5.8 11.4 12 12-6.2.6-11.4 5.8-12 12-.6-6.2-5.8-11.4-12-12C6.2 11.4 11.4 6.2 12 0Z"/></svg>
+            <span class="outline">Limited 2026</span>
+            <svg viewBox="0 0 24 24"><path d="M12 0c.6 6.2 5.8 11.4 12 12-6.2.6-11.4 5.8-12 12-.6-6.2-5.8-11.4-12-12C6.2 11.4 11.4 6.2 12 0Z"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="band band--b">
+        <div class="band__track" data-marquee="1">
+          <div class="band__group">
+            <span class="outline">Oversize Fit</span>
+            <svg viewBox="0 0 24 24"><path d="M12 0c.6 6.2 5.8 11.4 12 12-6.2.6-11.4 5.8-12 12-.6-6.2-5.8-11.4-12-12C6.2 11.4 11.4 6.2 12 0Z"/></svg>
+            <span>Hecho en Chile</span>
+            <svg viewBox="0 0 24 24"><path d="M12 0c.6 6.2 5.8 11.4 12 12-6.2.6-11.4 5.8-12 12-.6-6.2-5.8-11.4-12-12C6.2 11.4 11.4 6.2 12 0Z"/></svg>
+            <span><em>Streetwear chic</em></span>
+            <svg viewBox="0 0 24 24"><path d="M12 0c.6 6.2 5.8 11.4 12 12-6.2.6-11.4 5.8-12 12-.6-6.2-5.8-11.4-12-12C6.2 11.4 11.4 6.2 12 0Z"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 4. CATÁLOGO ===================== -->
+    <section class="catalog section" id="coleccion" aria-labelledby="catTitle">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <p class="eyebrow">01 — Colección</p>
+            <h2 class="section-title" id="catTitle">Lo nuevo <em>del drop</em></h2>
+          </div>
+          <div class="filters reveal" style="--d:.1s" role="group" aria-label="Filtrar por categoría">
+            <span class="filters__pill" aria-hidden="true"></span>
+            <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">Todos<sup></sup></button>
+            <button class="filter" type="button" data-filter="polerones" aria-pressed="false">Polerones<sup></sup></button>
+            <button class="filter" type="button" data-filter="poleras" aria-pressed="false">Poleras<sup></sup></button>
+            <button class="filter" type="button" data-filter="chaquetas" aria-pressed="false">Chaquetas<sup></sup></button>
+          </div>
+        </div>
+
+        <div class="catalog__bar reveal">
+          <p id="catalogCount" aria-live="polite">Mostrando productos</p>
+          <p><span class="hint-hover">Pasa el cursor para ver otra vista y elegir talla</span><span class="hint-touch">Toca la imagen para ver otra vista</span></p>
+        </div>
+
+        <!-- Los productos se generan desde el array PRODUCTS en app.js -->
+        <div class="product-grid" id="productGrid"></div>
+        <noscript><p>Activa JavaScript para ver el catálogo.</p></noscript>
+      </div>
+    </section>
+
+    <!-- ===================== DROP EXCLUSIVO ===================== -->
+    <section class="drop section" id="drops" aria-labelledby="dropTitle">
+      <div class="container drop__grid">
+        <div class="drop__media reveal">
+          <div class="drop__frame">
+            <img data-parallax-img="0.1" src="https://images.unsplash.com/photo-1520975954732-35dd22299614?auto=format&fit=crop&w=1000&h=1300&q=80" alt="Modelo con chaqueta biker de cuero negro" width="1000" height="1300" loading="lazy">
+          </div>
+          <div class="drop__float">
+            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=600&h=800&q=80" alt="Detalle de la chaqueta de cuero" width="600" height="800" loading="lazy">
+          </div>
+          <div class="drop__stamp" aria-hidden="true">
+            <svg viewBox="0 0 200 200">
+              <defs><path id="stampCircle" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs>
+              <text><textPath href="#stampCircle" textLength="498" lengthAdjust="spacing">Drop 04 • 50 unidades • Numeradas •</textPath></text>
+            </svg>
+            <span>04</span>
+          </div>
+        </div>
+
+        <div class="drop__content">
+          <p class="eyebrow reveal">02 — Próximo drop</p>
+          <!-- ✏️ EDITAR: producto del drop (la fecha se define en CONFIG.dropDate) -->
+          <h2 class="section-title reveal" id="dropTitle">Biker <em>Leather</em><br>Jacket</h2>
+          <p class="drop__text reveal">Cuero genuino, forro satinado y herrajes metálicos. Solo 50 unidades numeradas a mano: cuando se agota, no vuelve.</p>
+
+          <div class="countdown reveal" id="countdown" role="timer" aria-label="Tiempo restante para el lanzamiento">
+            <div class="countdown__unit"><span class="countdown__num" data-unit="d">00</span><span class="countdown__label">Días</span></div>
+            <div class="countdown__unit"><span class="countdown__num" data-unit="h">00</span><span class="countdown__label">Horas</span></div>
+            <div class="countdown__unit"><span class="countdown__num" data-unit="m">00</span><span class="countdown__label">Min</span></div>
+            <div class="countdown__unit"><span class="countdown__num" data-unit="s">00</span><span class="countdown__label">Seg</span></div>
+          </div>
+
+          <div class="drop__stock reveal">
+            <div class="drop__stock-top"><span>Pre-reservas</span><span><strong>36</strong> / 50</span></div>
+            <div class="stock-bar"><span style="--w:72%"></span></div>
+          </div>
+
+          <form class="inline-form reveal" id="dropForm" novalidate aria-describedby="dropMsg">
+            <label class="sr-only" for="dropEmail">Correo electrónico</label>
+            <input id="dropEmail" name="email" type="email" placeholder="Tu correo para acceso anticipado" autocomplete="email" maxlength="254" required>
+            <button class="btn btn--primary" type="submit"><span class="btn__inner">Avísame</span></button>
+          </form>
+          <p class="form-msg" id="dropMsg" aria-live="polite"></p>
+
+          <div class="drop__price reveal">
+            <span>Precio lanzamiento</span>
+            <strong>$129.990</strong>
+            <del>$159.990</del>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 6. LOOKBOOK PARALLAX ===================== -->
+    <section class="lookbook" id="lookbook" aria-labelledby="lookTitle">
+      <div class="lookbook__banner">
+        <div class="lookbook__bg">
+          <img data-parallax-img="0.22" src="https://images.unsplash.com/photo-1488161628813-04466f872be2?auto=format&fit=crop&w=2000&q=80" alt="" width="2000" height="1333" loading="lazy">
+        </div>
+        <div class="lookbook__overlay"></div>
+        <span class="lookbook__chapter" aria-hidden="true">03</span>
+
+        <div class="container lookbook__content">
+          <p class="eyebrow reveal">03 — Lookbook SS/26</p>
+          <!-- ✏️ EDITAR: frase de marca -->
+          <h2 class="lookbook__quote reveal" id="lookTitle">Vestir es <em>decir</em> quién eres, sin decir una palabra.</h2>
+          <div class="lookbook__row reveal">
+            <a href="#lookbookGrid" class="btn btn--light magnetic">
+              <span class="btn__inner">Ver Lookbook <svg class="i btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            </a>
+            <p class="lookbook__credits">Fotografía — Estudio Norte<br>Styling — Equipo <span data-brand>NAKAMA</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container lookbook__grid" id="lookbookGrid">
+        <div class="lb-col" data-speed="0.05">
+          <figure class="lb-item lb-item--tall reveal">
+            <div class="lb-item__frame"><div class="lb-item__zoom">
+              <img data-parallax-img="0.08" src="https://images.unsplash.com/photo-1516826957135-700dedea698c?auto=format&fit=crop&w=800&h=1150&q=80" alt="Look con suéter rosado y jeans rotos" width="800" height="1150" loading="lazy">
+            </div></div>
+            <figcaption><span>Look 01</span><strong>Soft Pink Denim</strong><a href="#coleccion" data-goto-filter="pantalones">Comprar look →</a></figcaption>
+          </figure>
+          <figure class="lb-item reveal">
+            <div class="lb-item__frame"><div class="lb-item__zoom">
+              <img data-parallax-img="0.08" src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=800&h=1000&q=80" alt="Look con abrigo a cuadros en la ciudad" width="800" height="1000" loading="lazy">
+            </div></div>
+            <figcaption><span>Look 04</span><strong>Tartan Layers</strong><a href="#coleccion" data-goto-filter="accesorios">Comprar look →</a></figcaption>
+          </figure>
+        </div>
+
+        <div class="lb-col lb-col--mid" data-speed="-0.05">
+          <div class="lb-intro reveal">
+            <p class="eyebrow">Editorial</p>
+            <h3>5 looks,<br><em>una actitud.</em></h3>
+            <p>Combinaciones pensadas por nuestro equipo de styling. Cada look enlaza directo a las prendas del catálogo.</p>
+          </div>
+          <figure class="lb-item lb-item--tall reveal">
+            <div class="lb-item__frame"><div class="lb-item__zoom">
+              <img data-parallax-img="0.08" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&h=1150&q=80" alt="Look con top rojo y chaqueta negra" width="800" height="1150" loading="lazy">
+            </div></div>
+            <figcaption><span>Look 02</span><strong>Red Signal</strong><a href="#coleccion" data-goto-filter="polerones">Comprar look →</a></figcaption>
+          </figure>
+        </div>
+
+        <div class="lb-col" data-speed="0.1">
+          <figure class="lb-item reveal">
+            <div class="lb-item__frame"><div class="lb-item__zoom">
+              <img data-parallax-img="0.08" src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&h=1000&q=80" alt="Look con pantalón a rayas frente a un muro turquesa" width="800" height="1000" loading="lazy">
+            </div></div>
+            <figcaption><span>Look 03</span><strong>Teal Stripes</strong><a href="#coleccion" data-goto-filter="pantalones">Comprar look →</a></figcaption>
+          </figure>
+          <figure class="lb-item lb-item--tall reveal">
+            <div class="lb-item__frame"><div class="lb-item__zoom">
+              <img data-parallax-img="0.08" src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=800&h=1150&q=80" alt="Look masculino con blazer camel" width="800" height="1150" loading="lazy">
+            </div></div>
+            <figcaption><span>Look 05</span><strong>Camel Tailoring</strong><a href="#coleccion" data-goto-filter="polerones">Comprar look →</a></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="perks" aria-label="Beneficios de compra">
+      <div class="container perks__grid">
+        <div class="perk reveal">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>
+          <div><h3>Envíos a todo el país</h3><p>Gratis sobre $60.000. Despacho en 24–48h.</p></div>
+        </div>
+        <div class="perk reveal" style="--d:.08s">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 8.7M20 4v4.7h-4.7"/><path d="M20 12a8 8 0 0 1-13.7 5.6L4 15.3M4 20v-4.7h4.7"/></svg>
+          <div><h3>Cambios gratis</h3><p>30 días para cambiar talla o prenda.</p></div>
+        </div>
+        <div class="perk reveal" style="--d:.16s">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5.5c0 4.3 3 8 7 9.5 4-1.5 7-5.2 7-9.5V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <div><h3>Pago 100% seguro</h3><p>Webpay, tarjetas de crédito y débito.</p></div>
+        </div>
+        <div class="perk reveal" style="--d:.24s">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5Z"/><path d="M8 10h8M8 13h5"/></svg>
+          <div><h3>Atención por WhatsApp</h3><p>Asesoría de tallas en minutos.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== 7. FOOTER ===================== -->
+  <footer class="footer" id="contacto">
+    <div class="container">
+      <div class="footer__news">
+        <div class="reveal">
+          <p class="eyebrow">Newsletter</p>
+          <h2 class="footer__news-title">Únete al <em>club.</em><br>10% off en tu primera compra</h2>
+        </div>
+        <div class="reveal" style="--d:.1s">
+          <form class="inline-form" id="newsForm" novalidate aria-describedby="newsMsg">
+            <label class="sr-only" for="newsEmail">Correo electrónico</label>
+            <input id="newsEmail" name="email" type="email" placeholder="tu@correo.cl" autocomplete="email" maxlength="254" required>
+            <button class="btn btn--primary" type="submit"><span class="btn__inner">Suscribirme</span></button>
+          </form>
+          <p class="form-msg" id="newsMsg" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <div class="footer__cols">
+        <div class="footer__brand">
+          <a class="nav__logo" href="#top" aria-label="Ir al inicio"><span data-brand>NAKAMA</span><sup>®</sup></a>
+          <!-- ✏️ EDITAR: descripción de la marca -->
+          <p>Streetwear de producción limitada. Diseñamos prendas esenciales con calce oversize y materiales que duran.</p>
+          <div class="socials">
+            <a class="social" href="#" aria-label="Instagram"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg></a>
+            <a class="social" href="#" aria-label="TikTok"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 2.8 2.3 4.5 5 4.8"/></svg></a>
+            <a class="social" href="#" aria-label="Pinterest"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10.5 21l2-8.5M10 13.5c-.6-2.8 1-5 3.3-5 2 0 3.2 1.4 3.2 3.4 0 2.4-1.3 4.3-3.1 4.3-1 0-1.6-.7-1.4-1.6"/></svg></a>
+          </div>
+        </div>
+
+        <div>
+          <h3>Tienda</h3>
+          <ul class="footer__links">
+            <li><a href="#coleccion" data-goto-filter="polerones">Polerones</a></li>
+            <li><a href="#coleccion" data-goto-filter="pantalones">Pantalones</a></li>
+            <li><a href="#coleccion" data-goto-filter="accesorios">Accesorios</a></li>
+            <li><a href="#drops">Próximo drop</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Ayuda</h3>
+          <ul class="footer__links">
+            <li><a href="#">Envíos y plazos</a></li>
+            <li><a href="#">Cambios y devoluciones</a></li>
+            <li><a href="#">Guía de tallas</a></li>
+            <li><a href="#">Preguntas frecuentes</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contacto</h3>
+          <!-- ✏️ EDITAR: datos de contacto -->
+          <ul class="footer__contact">
+            <li>Av. Italia 1234, Providencia</li>
+            <li><a href="mailto:hola@tutienda.cl">hola@tutienda.cl</a></li>
+            <li>+56 9 0000 0000</li>
+            <li>Lun a Sáb · 11:00 – 20:00</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 <span data-brand>NAKAMA</span> Studio. Todos los derechos reservados.</p>
+        <ul class="payments" aria-label="Medios de pago aceptados">
+          <li class="pay pay--visa">VISA</li>
+          <li class="pay" aria-label="Mastercard"><svg viewBox="0 0 40 24" aria-hidden="true"><circle cx="15" cy="12" r="8" fill="#eb001b"/><circle cx="25" cy="12" r="8" fill="#f79e1b"/><path d="M20 5.8a8 8 0 0 1 0 12.4 8 8 0 0 1 0-12.4Z" fill="#ff5f00"/></svg></li>
+          <li class="pay pay--webpay">web<b>pay</b></li>
+          <li class="pay">Débito</li>
+        </ul>
+        <p class="credits">Desarrollado a medida por <strong>Itera Code</strong></p>
+      </div>
+    </div>
+
+    <div class="footer__mark-wrap" aria-hidden="true">
+      <span class="footer__mark" data-brand>NAKAMA</span>
+    </div>
+  </footer>
+
+  <!-- ===================== 5. CARRITO LATERAL ===================== -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart is-empty" id="cart" role="dialog" aria-modal="true" aria-label="Tu carrito" aria-hidden="true" inert>
+    <header class="cart__head">
+      <h2 class="cart__title" id="cartTitle">Tu carrito<sup id="cartHeadCount">0</sup></h2>
+      <button class="icon-btn" id="cartClose" type="button" aria-label="Cerrar carrito">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </header>
+
+    <div class="cart__ship">
+      <p id="shipMsg">Envío gratis sobre $60.000</p>
+      <div class="progress"><span id="shipBar"></span></div>
+    </div>
+
+    <div class="cart__body">
+      <ul class="cart__items" id="cartItems"></ul>
+    </div>
+
+    <div class="cart__empty">
+      <span class="cart__empty-icon"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2L5 8Z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></span>
+      <h3>Tu carrito está vacío</h3>
+      <p>Las prendas del drop se agotan rápido. Encuentra la tuya antes que nadie.</p>
+      <button class="btn btn--primary" id="cartShop" type="button"><span class="btn__inner">Explorar colección</span></button>
+    </div>
+
+    <footer class="cart__foot">
+      <div class="cart__row"><span>Subtotal</span><span id="cartSubtotal">$0</span></div>
+      <div class="cart__row"><span>Envío</span><span id="cartShipping">Gratis</span></div>
+      <div class="cart__row cart__row--total"><span>Total</span><span id="cartTotal">$0</span></div>
+      <button class="btn btn--wa btn--block" id="checkoutWa" type="button">
+        <span class="btn__inner"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7L4 20Z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4.5 4.5 0 0 1-2.3-2.3l.8-1-1-2L9 9.5Z"/></svg>Finalizar vía WhatsApp</span>
+      </button>
+      <button class="btn btn--primary btn--block" id="checkoutWebpay" type="button"><span class="btn__inner">Pagar con Webpay</span></button>
+      <p class="cart__note"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Pago seguro · Checkout simulado (demo)</p>
+    </footer>
+  </aside>
+
+  <!-- Modal de pago simulado -->
+  <div class="modal" id="payModal" role="dialog" aria-modal="true" aria-labelledby="payTitle" aria-hidden="true" inert>
+    <div class="modal__box">
+      <div class="modal__step is-active" data-step="loading">
+        <div class="spinner" aria-hidden="true"></div>
+        <h2 class="modal__title" id="payTitle">Webpay</h2>
+        <p class="modal__text" id="payStatus" aria-live="polite">Conectando con Webpay…</p>
+        <span class="modal__amount" id="payAmount">$0</span>
+      </div>
+      <div class="modal__step" data-step="success">
+        <div class="check" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        <h2 class="modal__title">¡Pago aprobado!</h2>
+        <p class="modal__text">Recibirás la confirmación y el seguimiento en tu correo.</p>
+        <div class="modal__order">
+          <span>Pedido <strong id="orderId">#000000</strong></span>
+          <span>Total pagado <strong id="orderTotal">$0</strong></span>
+        </div>
+        <button class="btn btn--primary btn--block" id="payDone" type="button"><span class="btn__inner">Seguir comprando</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <!-- ✏️ EDITAR: número de WhatsApp (mismo formato que CONFIG.whatsapp) -->
+  <a class="wa-float" href="https://wa.me/56966110161" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+    <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7L4 20Z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4.5 4.5 0 0 1-2.3-2.3l.8-1-1-2L9 9.5Z"/></svg>
+  </a>
+
+  <script src="app.js?v=999" defer></script>
+</body>
+</html>
